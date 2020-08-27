@@ -36,7 +36,8 @@ class Trie:
             if w in root.children:
                 root = root.children[w]
             else:
-                return 
+                root = None 
+                return False
         # isEnd hona chahiye and null bhi nhi hona chahaie
         return root and root.isEnd
         
