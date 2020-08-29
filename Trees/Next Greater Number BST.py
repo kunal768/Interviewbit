@@ -40,4 +40,29 @@ class Solution:
             else:
                 A = A.right 
         return ans
+    
+# Stack Based Inorder Approach 
+class Solution:
+    # @param A : root node of tree
+    # @param B : integer
+    # @return the root node in the tree
+    def getSuccessor(self,root ,B):
+        stack,ans = [],[]
+        if not root :
+            return None
+        previous = False
+        while stack or root :
+            while root :
+                stack.append(root)
+                root = root.left
+            root = stack.pop()
+            if previous :
+                return root
+            if not previous and root.val == B :
+                previous = True
+            root = root.right
+        return None
             
+        
+
+
