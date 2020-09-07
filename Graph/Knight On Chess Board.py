@@ -19,7 +19,6 @@ class Solution:
             vis[x][y] = 1
             if x == E-1 and y == F-1 :
                 return d
-            vis[x][y] = 1
             for i in poss :
                 ax,ay = x+i[0],y+i[1]
                 if issafe(ax,ay):
